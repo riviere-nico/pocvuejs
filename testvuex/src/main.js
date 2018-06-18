@@ -19,6 +19,7 @@ const mystore = {
   yep: 'yep',
 };
 
+
 Vue.use(mystore);
 
 new Vue({
