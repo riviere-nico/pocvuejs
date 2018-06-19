@@ -21,6 +21,7 @@ const mystore = {
 };
 Vue.config.productionTip = false;
 
+
 Vue.use(mystore);
 
 new Vue({
