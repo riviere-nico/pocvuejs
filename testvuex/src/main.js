@@ -3,9 +3,6 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 // import store from './store';
-
-Vue.config.productionTip = false;
-
 const mystore = {
   install: function(Vue)
   {
@@ -13,11 +10,16 @@ const mystore = {
       get: function()
       {
         return mystore.yep;
-      }
+      },
+      set: function()
+      {
+        mystore.yep = 'aa';
+      },
     }
   },
   yep: 'yep',
 };
+Vue.config.productionTip = false;
 
 Vue.use(mystore);
 
