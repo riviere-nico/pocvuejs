@@ -1,16 +1,23 @@
-const mystore = {
-  install: function(Vue)
-  {
-    Vue.prototype.$mystore = {
-      get: function()
-      {
-        return mystore.yep;
+
+class MyPluginStore {
+  constructor(data = {}) {
+    this.storeVM = new Vue({ data });
+  }
+
+  get state() {
+    return this.storeVM.$data;
+  }
+}
+
+const MyPlugin = {
+  Store: MyPluginStore,
+  install(Vue) {
+    Vue.mixin({
+      beforeCreate(Vue) {
+        this.$myPlugin = new MyPlugin.Store({ count: 0 });
       },
-    }
+    });
   },
-  yep: 'yep',
 };
 
-export default {
-  mystore,
-}
+export default MyPlugin;
