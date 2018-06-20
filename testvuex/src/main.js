@@ -3,13 +3,18 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 // import store from './store';
-import MyPlugin from './mystore.js';
+import Vuey from './mystore.js';
 
 Vue.config.productionTip = false;
 
-Vue.use(MyPlugin);
+Vue.use(Vuey);
+
+let db = new Vuey.Db({
+  url: 'aa',
+});
 
 new Vue({
   router,
+  db,
   render: h => h(App),
 }).$mount('#app');

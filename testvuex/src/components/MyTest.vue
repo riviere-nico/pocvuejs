@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    <h1>{{this.$myPlugin.state.count}} !</h1>
+    <h1 @click="seturl">{{$db.state.url}} !</h1>
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   name: 'MyTest',
   props: {
     msg: String,
+  },
+  methods: {
+    seturl: function() {
+      this.$db.state.url = 'r';
+    }
   },
 };
 </script>
