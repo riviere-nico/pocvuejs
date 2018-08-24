@@ -1,2 +1,2 @@
 import m from "mithril";
-m.render(document.body, "hello world !");
+m.render(document.body, "hello world !!!");
